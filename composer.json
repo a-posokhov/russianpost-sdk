@@ -1,0 +1,64 @@
+{
+    "name": "a-posokhov/russianpost-sdk",
+    "keywords": ["Russian Post", "pochta", "Почта России", "delivery", "служба доставки"],
+    "homepage": "https://github.com/appwilio/russianpost-sdk",
+    "description": "Russian Post (pochta.ru) SDK",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roman Sokharev",
+            "email": "greabock17@gmail.com",
+            "role": "Creator"
+        },
+        {
+            "name": "JhaoDa",
+            "email": "jhaoda@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "jhaoda@gmail.com",
+        "issues": "https://github.com/appwilio/russianpost-sdk/issues"
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-intl": "*",
+        "ext-json": "*",
+        "ext-soap": "*",
+        "guzzlehttp/guzzle": "^6.3",
+        "psr/log": "^1.1"
+    },
+    "require-dev": {
+        "illuminate/support": "5.1 - 5.8",
+        "monolog/monolog": "^1.25",
+        "phpunit/phpunit": "^7.5",
+        "symfony/var-dumper": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Appwilio\\RussianPostSDK\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Appwilio\\RussianPostSDK\\Tests\\": "tests/"
+        }
+    },
+    "suggest": {
+    	"monolog/monolog": "Для логирования и отладки"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Appwilio\\RussianPostSDK\\LaravelServiceProvider"
+            ]
+        }
+    }
+}
