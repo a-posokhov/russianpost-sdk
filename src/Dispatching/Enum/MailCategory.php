@@ -20,10 +20,11 @@ final class MailCategory
      *
      * @see https://otpravka.pochta.ru/specification#/enums-base-mail-category
      */
-    public const SIMPLE        = 'SIMPLE';
-    public const ORDERED       = 'ORDERED';
-    public const ORDINARY      = 'ORDINARY';
-    public const COMBINED      = 'COMBINED';
-    public const DECLARED      = 'WITH_DECLARED_VALUE';
-    public const DECLARED_CASH = 'WITH_DECLARED_VALUE_AND_CASH_ON_DELIVERY';
+    public const SIMPLE            = 'SIMPLE';
+    public const ORDERED           = 'ORDERED';
+    public const ORDINARY          = 'ORDINARY';
+    public const COMBINED          = 'COMBINED';
+    public const COMBINED_ORDINARY = 'COMBINED_ORDINARY';
+    public const DECLARED          = 'WITH_DECLARED_VALUE';
+    public const DECLARED_CASH     = 'WITH_DECLARED_VALUE_AND_CASH_ON_DELIVERY';
 }

@@ -24,6 +24,15 @@ final class CalculationRequest implements Arrayable
         ];
     }
 
+    public function deliveryPointIndex(bool $value = false)
+    {
+        if ($value) {
+            $this->data['delivery-point-index'] = $this->data['index-to'];
+        }
+
+        return $this;
+    }
+
     public function ofEntriesType(string $entriesType)
     {
         $this->data['entries-type'] = $entriesType;
