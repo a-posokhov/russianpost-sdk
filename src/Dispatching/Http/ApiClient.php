@@ -94,7 +94,7 @@ final class ApiClient implements LoggerAwareInterface
 
             $contenType = $response->getHeaderLine('Content-Type');
 
-            if (\preg_match('~^application/(pdf|zip)$~', $contenType, $matches)) {
+            if (\preg_match('~^application/(pdf|zip|octet-stream)$~', $contenType, $matches)) {
                 return $this->buildFile($response, $matches[1]);
             }
 
@@ -121,7 +121,7 @@ final class ApiClient implements LoggerAwareInterface
     private function buildHttpRequest(string $method, string $path, ?Arrayable $payload): RequestInterface
     {
         $request = $this->authentication->authenticate(
-            new Request($method, self::API_URL.$path, ['Accept' => 'application/json;charset=UTF-8'])
+            new Request($method, self::API_URL.$path, ['Accept' => 'application/json, application/octet-stream;charset=UTF-8'])
         );
 
         if ($payload === null) {
