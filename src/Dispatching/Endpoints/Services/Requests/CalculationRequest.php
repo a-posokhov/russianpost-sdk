@@ -130,4 +130,11 @@ final class CalculationRequest implements Arrayable
 
         return $this;
     }
+
+    public function indexFrom(string $value = '')
+    {
+        $this->data['index-from'] = $value;
+
+        return $this;
+    }
 }
