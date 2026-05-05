@@ -43,7 +43,6 @@ final class OrderRequest implements Arrayable
 
     public static function fromOrder(Order $order)
     {
-        
     }
 
     public function __construct(
@@ -184,11 +183,18 @@ final class OrderRequest implements Arrayable
         foreach ($address->toArray() as $key => $value) {
             if ($key === 'index' && !\preg_match(self::RUSSIAN_POSTAL_CODE, $value)) {
                 yield 'str-index-to' => $value;
-            } else if ($key === 'mail-direct') {
+            } elseif ($key === 'mail-direct') {
                 yield $key => $value;
             } else {
                 yield "{$key}-to" => $value;
             }
         }
+    }
+
+    public function indexFrom(string $value = '')
+    {
+        $this->data['address-from']['index'] = $value;
+
+        return $this;
     }
 }
