@@ -191,9 +191,9 @@ final class OrderRequest implements Arrayable
         }
     }
 
-    public function indexFrom(string $value = '')
+    public function postOfficeCode(string $value = '')
     {
-        $this->data['address-from']['index'] = $value;
+        $this->data['postoffice-code'] = $value;
 
         return $this;
     }
